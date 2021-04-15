@@ -1,6 +1,5 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Threading;
@@ -9,7 +8,6 @@ using System.Windows.Forms;
 using System.Net;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using System.Web;
 using Advanced_Combat_Tracker;
 using SharpCompress.Archives.Zip;
 using Newtonsoft.Json.Linq;
@@ -369,28 +367,18 @@ namespace RainbowMage.OverlayPlugin
 #endif
 
             var url = preset.Url.Replace("\\", "/").Replace("%%", resourcesPath);
-            UriBuilder uri = new UriBuilder(url);
-            NameValueCollection query_params = HttpUtility.ParseQueryString(uri.Query);
-
             if (preset.Supports.Contains("modern"))
             {
-                query_params.Add("OVERLAY_WS", hostUrl + "/ws");
+                url += "?OVERLAY_WS=" + hostUrl + "/ws";
             } else if (preset.Supports.Contains("actws"))
             {
-                query_params.Add("HOST_PORT", hostUrl + "/");
+                url += "?HOST_PORT=" + hostUrl + "/";
             } else
             {
                 url = "";
             }
 
-            uri.Query = HttpUtility.UrlDecode(query_params.ToString());
-
-            if ((uri.Port == 443 && uri.Scheme == "https") || (uri.Port == 80 && uri.Scheme == "http"))
-            {
-                uri.Port = -1;
-            }
-
-            txtOverlayUrl.Text = (url != "") ? uri.ToString() : url;
+            txtOverlayUrl.Text = url;
         }
 
         private void txtOverlayUrl_Click(object sender, EventArgs e)
