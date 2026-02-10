@@ -162,54 +162,54 @@
         }
     },
     "TraditionalChinese": {
-        "2025.12.05.0000.0000": {
-            // Version: 7.0, but client structs 7.2
+        "2026.01.22.0000.0000": {
+            // Version: 7.01, but client structs 7.2
             "CountdownCancel": {
-                "opcode": 432,
+                "opcode": 700,
                 "size": 0
             },
             "NpcYell": {
-                "opcode": 410,
+                "opcode": 127,
                 "size": 0
             },
             "MapEffect": {
-                "opcode": 774,
+                "opcode": 630,
                 "size": 0
             },
             "ActorSetPos": {
-                "opcode": 759,
+                "opcode": 761,
                 "size": 0
             },
             "Countdown": {
-                "opcode": 757,
+                "opcode": 116,
                 "size": 0
             },
             "RSVData": {
-                "opcode": 558,
+                "opcode": 203,
                 "size": 0
             },
             "MapEffect12": {
-                "opcode": 617,
+                "opcode": 598,
                 "size": 0
             },
             "ActorMove": {
-                "opcode": 879,
+                "opcode": 812,
                 "size": 0
             },
             "CEDirector": {
-                "opcode": 587,
+                "opcode": 601,
                 "size": 0
             },
             "MapEffect4": {
-                "opcode": 179,
+                "opcode": 894,
                 "size": 0
             },
             "BattleTalk2": {
-                "opcode": 987,
+                "opcode": 262,
                 "size": 0
             },
             "MapEffect8": {
-                "opcode": 994,
+                "opcode": 278,
                 "size": 0
             }
         }
